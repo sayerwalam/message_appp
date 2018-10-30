@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MessageApp</title>
+    <style type="text/css">
+      #flash{
+              font-size: 18px;
+              font-style: italic;
+              color: #555555;
+              margin-left: 40%;
+      }
+    </style>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+
+  <%= render 'layouts/header' %>
+  
+  	<% flash.each do |message_type, message| %>
+			<div id="flash" class="flash-<%= message_type %>"><%= message %></div>
+		<% end %>
+    <%= yield %>
+  </body>
+</html>

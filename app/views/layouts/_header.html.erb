@@ -1,0 +1,60 @@
+<head>
+  <style type="text/css">
+  .logo{
+    margin-top: 2px;
+    background-color: #e7e7e7;
+    color: #555555;
+  }
+  
+    .navigation-wrapper{
+       position: relative;
+       padding: 15px 25px 15px 25px;
+       @include linear-gradient(#0078D7, #2680C7)
+    }
+
+  .nav-link {
+      padding-right: 1em;
+      font-size: 20px;
+      float: right;
+    }
+
+    h1{
+
+      font-size: 35px;
+      font-style: italic;
+      font-family: Algerian ;
+      color: #555555;
+      text-align: center;
+    }
+
+    .button{
+      background-color: #555555; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    }
+
+  </style>
+</head>
+<body>
+  <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <div class="logo"><h1> Message App </h1> </div>
+    <nav role="navigation">
+        <% if user_signed_in? %>
+           <span class="nav-link"> <%= link_to "New", new_message_path, class: 'button'%> </span>
+          <span class="nav-link"> <%= link_to "Inbox", messages_path, class: 'button' %> </span>
+          <span class="nav-link"> <%= link_to "Logout", destroy_user_session_path, :method => :delete , class: 'button' %> </span>
+        <% else %>
+          <span class="nav-link"><%= link_to "Sign In", new_user_session_path, class: 'button' %></span>
+          <span class="nav-link"><%= link_to "Register", new_user_registration_path, class: 'button' %></span>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+</header>
+</body>

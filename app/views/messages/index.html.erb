@@ -1,0 +1,31 @@
+<head>
+	<style type="text/css">
+		table{
+			margin-left: 38%;
+			margin-top: 5%;
+			font-size: 18px;
+			font-style: italic;
+			font-family: Berlin Sans FB;
+		}
+		td{
+			padding-right: 20px;
+			padding-left: 20px;
+			padding-top: 20px;
+			padding-bottom: 20px;
+		}
+	</style>
+</head>
+<body style="background-color: #e7e7e7;">
+<div class="bigbox">
+	<div class="box">
+		<table border="1">
+		<% @messages.each do |message| %>
+			<tr>
+					<td> <%= message.message.sender.username %> </td>
+					<td> Message is : <br/> <br/> <%= message.message.body %></td>
+			</tr>
+		<% end %>
+	</table>
+	</div>
+</div>
+</body>
